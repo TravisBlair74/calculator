@@ -9,7 +9,7 @@ ARGV.each_with_index do |n, i|
   end
 end
 
-# Check format
+# Check formatting
 ARGV.each_with_index do |n, i|
   if i == 0
     puts "error" unless n.is_a?(Integer)
