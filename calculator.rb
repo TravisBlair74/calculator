@@ -9,6 +9,19 @@ ARGV.each_with_index do |n, i|
   end
 end
 
+# Check format
+ARGV.each_with_index do |n, i|
+  if i == 0
+    puts "error" unless n.is_a?(Integer)
+  elsif i == ARGV.size - 1
+    puts "error" unless n.is_a?(Integer)
+  elsif operators.include?(n)
+    puts "error" unless ARGV[i-1].is_a?(Integer)
+  elsif n.is_a?(Integer)
+    puts "error" unless operators.include?(ARGV[i-1])
+  end
+end
+
 # Multiplication and division are done first
 ARGV.each_with_index do |n, i|
 # Multiplication
